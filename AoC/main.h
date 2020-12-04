@@ -2,4 +2,4 @@
 
 using namespace std;
 
-void test_day_one();
+void exec_func(int(*function)());
