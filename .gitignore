@@ -8,3 +8,9 @@
 *.filters
 *.lastbuildstate
 *.log
+*.pdb
+*.ilk
+*.exe
+*.idb
+*.pdb
+*.tlog

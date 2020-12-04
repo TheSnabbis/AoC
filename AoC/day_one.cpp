@@ -1,11 +1,12 @@
 #include "day_one.h"
 
-string input_file = "day_one_input.txt";
-std::vector<int> inputlist;
-
 int day_one()
 {
-	read_input();
+	string input_file = "day_one_input.txt";
+	std::vector<int> inputlist;
+
+	read_input_int(input_file, inputlist);
+	
 	int saved;
 
 	for (int input : inputlist)
@@ -26,12 +27,32 @@ int day_one()
 	return -1;
 }
 
-void read_input()
+int day_one_part_two()
 {
-	std::ifstream file(input_file, std::ios_base::in);
+	string input_file = "day_one_input.txt";
+	std::vector<int> inputlist;
 
-	std::copy(
-		std::istream_iterator<int>(file),
-		std::istream_iterator<int>(),
-		std::back_inserter(inputlist));
+	read_input_int(input_file, inputlist);
+
+	int isaved, jsaved;
+
+	for (int i : inputlist)
+	{
+		isaved = i;
+
+		for (int j : inputlist)
+		{
+			jsaved = j;
+
+			for (int k : inputlist)
+			{
+				if (isaved + jsaved + k == 2020)
+				{
+					return (isaved * j * k);
+				}
+			}
+		}
+	}
+
+	return -1;
 }

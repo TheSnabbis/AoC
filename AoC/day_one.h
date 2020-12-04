@@ -1,11 +1,7 @@
 #pragma once
-#include <vector>
-#include <fstream>
-#include <iostream>
-#include <iterator>
 
-using namespace std;
+#include "readinput.h"
 
 int day_one();
 
-void read_input();
+int day_one_part_two();
