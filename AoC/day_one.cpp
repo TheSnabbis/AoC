@@ -16,20 +16,14 @@ int day_one()
 	std::vector<int> inputlist;
 
 	read_input_int(input_file, inputlist);
-	
-	int saved;
 
-	for (int input : inputlist)
+	for (int& input : inputlist)
 	{
-		saved = input;
-
-		inputlist.erase(inputlist.begin());
-
-		for (int j : inputlist)
+		for (int& j : inputlist)
 		{
-			if (saved + j == 2020)
+			if (input + j == 2020)
 			{
-				return saved * j;
+				return input * j;
 			}
 		}
 	}
@@ -44,21 +38,15 @@ int day_one_part_two()
 
 	read_input_int(input_file, inputlist);
 
-	int isaved, jsaved;
-
-	for (int i : inputlist)
+	for (int& i : inputlist)
 	{
-		isaved = i;
-
-		for (int j : inputlist)
+		for (int& j : inputlist)
 		{
-			jsaved = j;
-
-			for (int k : inputlist)
+			for (int& k : inputlist)
 			{
-				if (isaved + jsaved + k == 2020)
+				if (i + j + k == 2020)
 				{
-					return (isaved * j * k);
+					return (i * j * k);
 				}
 			}
 		}
